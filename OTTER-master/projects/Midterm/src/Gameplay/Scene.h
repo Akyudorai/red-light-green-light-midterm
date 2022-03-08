@@ -184,6 +184,7 @@ namespace Gameplay {
 
 		int NumObjects() const;
 		GameObject::Sptr GetObjectByIndex(int index) const;
+		std::vector<GameObject::Sptr> GetObjects() { return _objects; }
 
 	protected:
 		friend class HierarchyWindow;

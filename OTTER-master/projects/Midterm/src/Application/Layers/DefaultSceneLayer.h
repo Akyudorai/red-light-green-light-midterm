@@ -37,4 +37,7 @@ protected:
 	bool redLightBool = false;
 	bool moving = false;
 	bool cameraTest = true;
+
+	bool lightsEnabled = true;
+	bool specularEnabled = true;
 };

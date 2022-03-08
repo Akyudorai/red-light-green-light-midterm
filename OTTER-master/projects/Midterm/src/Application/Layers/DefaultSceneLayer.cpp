@@ -147,7 +147,11 @@ void DefaultSceneLayer::OnUpdate(){ //UPDATE GAME LOOP, Automatically called eve
 	}
 
 	if (InputEngine::GetKeyState(GLFW_KEY_1) == ButtonState::Pressed) {
-		
+		for (int i = 0; i < lightPar->GetChildren().size(); i++) {
+			lightPar->GetChildren()[i]->Get<Light>()->IsEnabled = !lightPar->GetChildren()[i]->Get<Light>()->IsEnabled;
+		}
+		_currentScene->FindObjectByName("player")->Get<Light>()->IsEnabled = !_currentScene->FindObjectByName("player")->Get<Light>()->IsEnabled;
+		lightsEnabled = !lightsEnabled;
 	}
 
 	if (InputEngine::GetKeyState(GLFW_KEY_2) == ButtonState::Pressed) {
